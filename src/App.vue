@@ -1,26 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <v-app-bar app>
+      <v-toolbar-title>Vue Luxe Life</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn to="/" text>Home</v-btn>
+      <v-btn to="/financial" text>Financial Planning</v-btn>
+      <v-btn to="/luxury" text>Luxury Discovery</v-btn>
+    </v-app-bar>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+// Optionally add any logic related to the app bar or navigation
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+/* Add scoped styles here */
 </style>
