@@ -6,6 +6,7 @@
       <v-btn to="/" text>Home</v-btn>
       <v-btn to="/financial" text>Financial Planning</v-btn>
       <v-btn to="/luxury" text>Luxury Discovery</v-btn>
+      <v-btn to="/login" text>Login</v-btn>
     </v-app-bar>
     <v-main>
       <router-view></router-view>
