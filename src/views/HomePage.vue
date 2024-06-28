@@ -3,11 +3,11 @@
       <h1 v-if="user">Welcome, {{ user.name }}!</h1>
       <v-row v-if="user">
         <v-col v-for="interest in user.preferences" :key="interest" cols="12">
-          <v-card>
+          <v-card class="feed-card">
             <v-card-title>{{ interest }} Feed</v-card-title>
             <v-card-text>
               <div v-if="feeds[interest] && feeds[interest].length > 0">
-                <div v-for="(article, index) in feeds[interest]" :key="index">
+                <div v-for="(article, index) in feeds[interest]" :key="index" class="article">
                   <p><strong>{{ article.title }}</strong></p>
                   <p>{{ article.description }}</p>
                   <p>Published on: {{ new Date(article.publishedAt).toLocaleDateString() }}</p>
@@ -63,6 +63,33 @@
   </script>
   
   <style scoped>
-  /* Add scoped styles here */
+  .feed-card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f5f5f5;
+  }
+  
+  .article {
+    margin-bottom: 15px;
+  }
+  
+  .article p {
+    margin-bottom: 5px;
+  }
+  
+  .article p strong {
+    font-size: 1.1rem;
+  }
+  
+  .article p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .article p a:hover {
+    text-decoration: underline;
+  }
   </style>
   

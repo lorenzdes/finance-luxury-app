@@ -3,7 +3,7 @@
       <h1>Financial Planning</h1>
   
       <!-- Budget Calculator -->
-      <v-card>
+      <v-card class="financial-card">
         <v-card-title>Budget Calculator</v-card-title>
         <v-card-text>
           <v-form>
@@ -18,7 +18,7 @@
       </v-card>
   
       <!-- Savings Goal Tracker -->
-      <v-card>
+      <v-card class="financial-card">
         <v-card-title>Savings Goal Tracker</v-card-title>
         <v-card-text>
           <v-form>
@@ -34,7 +34,7 @@
       </v-card>
   
       <!-- Investment Calculator -->
-      <v-card>
+      <v-card class="financial-card">
         <v-card-title>Investment Calculator</v-card-title>
         <v-card-text>
           <v-form>
@@ -89,6 +89,22 @@
   </script>
   
   <style scoped>
-  /* Add scoped styles here */
+  .financial-card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f5f5f5;
+  }
+  
+  .financial-card .v-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .financial-card .v-btn {
+    margin-top: 10px;
+  }
   </style>
   
