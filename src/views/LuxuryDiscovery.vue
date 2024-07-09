@@ -6,7 +6,7 @@
           <v-card class="place-card">
             <v-card-title>{{ place.name }}</v-card-title>
             <v-card-actions>
-              <v-btn color="primary" :href="getBookingUrl(place.name)" target="_blank">Book Now</v-btn>
+              <v-btn append-icon="mdi-open-in-new" color="primary" :href="getBookingUrl(place.name)" target="_blank">Book Now</v-btn>
             </v-card-actions>
           </v-card>
         </v-col>

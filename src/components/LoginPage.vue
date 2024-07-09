@@ -18,7 +18,8 @@
                   :rules="[v => !!v || 'Password is required']"
                   required
                   type="password"
-                ></v-text-field>
+                ></v-text-field>                
+                <v-checkbox label="Rember me"></v-checkbox>
                 <v-btn :disabled="!valid" color="primary" @click="login">Register</v-btn>
               </v-form>
             </v-card-text>

@@ -1,7 +1,11 @@
 <template>
   <v-app>
     <v-app-bar app>
-      <v-toolbar-title>Vue Luxe Life</v-toolbar-title>
+      <v-toolbar-title>
+        <RouterLink to="/">
+          Vue Luxe Life
+        </RouterLink>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn to="/" text>Home</v-btn>
       <v-btn to="/financial" text>Financial Planning</v-btn>
