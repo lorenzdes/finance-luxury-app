@@ -20,12 +20,25 @@
                 type="password"
               ></v-text-field>
               <v-checkbox v-model="rememberMe" label="Remember me"></v-checkbox>
+
+              <v-divider class="my-4"></v-divider>
+
+              <p>Select your interests:</p>
+              <v-checkbox v-model="interests" label="Technology" value="Technology"></v-checkbox>
+              <v-checkbox v-model="interests" label="Finance" value="Finance"></v-checkbox>
+              <v-checkbox v-model="interests" label="Health" value="Health"></v-checkbox>
+              <v-checkbox v-model="interests" label="Sports" value="Sports"></v-checkbox>
+              <v-checkbox v-model="interests" label="Entertainment" value="Entertainment"></v-checkbox>
+
               <v-btn :disabled="!valid" color="primary" @click="register">Register</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
+    <v-snackbar v-model="showSnackbar" timeout="3000">
+      Please select at least one interest.
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -39,14 +52,20 @@ export default {
       username: '',
       password: '',
       rememberMe: false,
+      interests: [], // Store selected interests
+      showSnackbar: false, // Snackbar visibility
     };
   },
   methods: {
     ...mapActions(['setUser']),
     register() {
+      if (this.interests.length === 0) {
+        this.showSnackbar = true;
+        return;
+      }
       const user = {
         name: this.username,
-        preferences: ['Technology', 'Finance'], // Example preferences
+        preferences: this.interests, // Save the selected interests
       };
       this.setUser(user);
       console.log('Registration successful!');
@@ -56,4 +75,6 @@ export default {
 };
 </script>
 
-
+<style scoped>
+/* Add your styles here */
+</style>
