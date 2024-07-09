@@ -1,23 +1,18 @@
+// store/index.js
 import { createStore } from 'vuex';
 
-const store = createStore({
+export default createStore({
   state: {
-    user: {
-      name: 'John Doe',
-      preferences: ['Fashion', 'Travel', 'Dining']
-    },
-    financial: {
-      budget: 10000,
-      savings: 20000,
-      investments: [
-        { name: 'Stocks', amount: 5000 },
-        { name: 'Bonds', amount: 3000 },
-      ]
-    }
+    user: null,
   },
-  mutations: {},
-  actions: {},
-  getters: {},
+  mutations: {
+    SET_USER(state, user) {
+      state.user = user;
+    },
+  },
+  actions: {
+    setUser({ commit }, user) {
+      commit('SET_USER', user);
+    },
+  },
 });
-
-export default store;
