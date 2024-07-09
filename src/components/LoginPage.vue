@@ -52,8 +52,8 @@ export default {
       username: '',
       password: '',
       rememberMe: false,
-      interests: [], // Store selected interests
-      showSnackbar: false, // Snackbar visibility
+      interests: [],
+      showSnackbar: false,
     };
   },
   methods: {
@@ -65,11 +65,11 @@ export default {
       }
       const user = {
         name: this.username,
-        preferences: this.interests, // Save the selected interests
+        preferences: this.interests,
       };
       this.setUser(user);
       console.log('Registration successful!');
-      this.$router.push('/');
+      this.$router.push('/'); // Redirect to the homepage after registration
     },
   },
 };

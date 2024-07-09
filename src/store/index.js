@@ -6,13 +6,22 @@ export default createStore({
     user: null,
   },
   mutations: {
-    SET_USER(state, user) {
+    setUser(state, user) {
       state.user = user;
+    },
+    clearUser(state) {
+      state.user = null;
     },
   },
   actions: {
     setUser({ commit }, user) {
-      commit('SET_USER', user);
+      commit('setUser', user);
     },
+    clearUser({ commit }) {
+      commit('clearUser');
+    },
+  },
+  getters: {
+    isAuthenticated: (state) => !!state.user,
   },
 });
